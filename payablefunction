@@ -1,0 +1,25 @@
+pragma solidity^0.4.*;
+
+contract Ticketsseller
+{
+    uint constant price = 1 ether;
+    uint public tickets;
+    address owner;
+    mapping(address => uint) purchaser;
+    
+    function Ticketsseller()
+    {
+        tickets = 5;
+        //owner= msg.sender;
+        
+    }
+    function BuyTickets(uint amount) payable
+    {
+        if(msg.value != (amount*price)||(amount<tickets)){
+        throw;
+        }
+   
+        purchaser[msg.sender]=amount;
+         tickets -= amount;
+    }  
+}
