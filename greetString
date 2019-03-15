@@ -1,0 +1,16 @@
+pragma solidity^0.4.*;
+
+contract Stringvalue
+{
+     string public str;
+     
+    function setGreet(string _str) public
+    {
+        str=_str;
+    }
+    
+    function getGreet() public view returns(string)
+    {
+        return str;
+    }
+}
